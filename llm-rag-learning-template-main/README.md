@@ -26,3 +26,4 @@ GitHub で「Fork」ボタンをクリック
 git clone https://github.com/あなたのユーザー名/llm-rag-learning-template.git
 cd llm-rag-learning-template
 ```
+                    登録文書: ${semanticRAG ? semanticRAG.ragSystem.documents.length : 0}件<br>

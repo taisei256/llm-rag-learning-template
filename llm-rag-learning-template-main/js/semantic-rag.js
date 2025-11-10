@@ -89,7 +89,7 @@ class SemanticRAGSystem {
       throw new Error("システムが初期化されていません");
     }
 
-    console.log("\n=== セマンティック検索開始 ===");
+    // console.log("\n=== セマンティック検索開始 ===");
     console.log("質問:", question);
 
     try {
