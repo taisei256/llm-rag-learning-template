@@ -1,0 +1,312 @@
+{
+  "concepts": {
+    "programming": {
+      "id": "programming",
+      "label": "プログラミング",
+      "level": "beginner",
+      "subConcepts": [
+        "variables",
+        "functions",
+        "loops",
+        "conditionals"
+      ],
+      "prerequisites": [],
+      "relatedConcepts": [
+        "computer-science",
+        "algorithms"
+      ],
+      "description": "コンピュータプログラムの作成技術"
+    },
+    "variables": {
+      "id": "variables",
+      "label": "変数",
+      "level": "beginner",
+      "subConcepts": [
+        "data-types",
+        "scope",
+        "declaration"
+      ],
+      "prerequisites": [],
+      "relatedConcepts": [
+        "memory",
+        "assignment",
+        "constants"
+      ],
+      "description": "データを格納するための名前付きの場所"
+    },
+    "functions": {
+      "id": "functions",
+      "label": "関数",
+      "level": "intermediate",
+      "subConcepts": [
+        "parameters",
+        "return-values",
+        "recursion",
+        "closures"
+      ],
+      "prerequisites": [
+        "variables"
+      ],
+      "relatedConcepts": [
+        "procedures",
+        "methods",
+        "abstraction"
+      ],
+      "description": "再利用可能なコードブロック"
+    },
+    "loops": {
+      "id": "loops",
+      "label": "ループ",
+      "level": "beginner",
+      "subConcepts": [
+        "for-loop",
+        "while-loop",
+        "iteration"
+      ],
+      "prerequisites": [
+        "variables"
+      ],
+      "relatedConcepts": [
+        "conditionals",
+        "iteration"
+      ],
+      "description": "処理を繰り返し実行する制御構造"
+    },
+    "conditionals": {
+      "id": "conditionals",
+      "label": "条件分岐",
+      "level": "beginner",
+      "subConcepts": [
+        "if-else",
+        "switch",
+        "boolean-logic"
+      ],
+      "prerequisites": [
+        "variables"
+      ],
+      "relatedConcepts": [
+        "boolean",
+        "comparison"
+      ],
+      "description": "条件に基づいて処理を分岐させる制御構造"
+    },
+    "data-structures": {
+      "id": "data-structures",
+      "label": "データ構造",
+      "level": "intermediate",
+      "subConcepts": [
+        "arrays",
+        "linked-lists",
+        "trees",
+        "graphs",
+        "hash-tables"
+      ],
+      "prerequisites": [
+        "programming",
+        "variables"
+      ],
+      "relatedConcepts": [
+        "algorithms",
+        "complexity"
+      ],
+      "description": "データを効率的に格納・操作する方法"
+    },
+    "algorithms": {
+      "id": "algorithms",
+      "label": "アルゴリズム",
+      "level": "intermediate",
+      "subConcepts": [
+        "sorting",
+        "searching",
+        "recursion",
+        "dynamic-programming"
+      ],
+      "prerequisites": [
+        "programming",
+        "data-structures"
+      ],
+      "relatedConcepts": [
+        "complexity",
+        "optimization"
+      ],
+      "description": "問題を解決するための手順"
+    },
+    "machine-learning": {
+      "id": "machine-learning",
+      "label": "機械学習",
+      "level": "advanced",
+      "subConcepts": [
+        "supervised-learning",
+        "unsupervised-learning",
+        "reinforcement-learning",
+        "deep-learning"
+      ],
+      "prerequisites": [
+        "programming",
+        "algorithms",
+        "statistics"
+      ],
+      "relatedConcepts": [
+        "ai",
+        "neural-networks",
+        "data-science"
+      ],
+      "description": "データからパターンを学習する技術"
+    },
+    "deep-learning": {
+      "id": "deep-learning",
+      "label": "深層学習",
+      "level": "advanced",
+      "subConcepts": [
+        "neural-networks",
+        "cnn",
+        "rnn",
+        "transformers"
+      ],
+      "prerequisites": [
+        "machine-learning",
+        "linear-algebra"
+      ],
+      "relatedConcepts": [
+        "ai",
+        "computer-vision",
+        "nlp"
+      ],
+      "description": "多層ニューラルネットワークを使用する機械学習"
+    },
+    "object-oriented": {
+      "id": "object-oriented",
+      "label": "オブジェクト指向",
+      "level": "intermediate",
+      "subConcepts": [
+        "classes",
+        "inheritance",
+        "polymorphism",
+        "encapsulation"
+      ],
+      "prerequisites": [
+        "functions",
+        "data-structures"
+      ],
+      "relatedConcepts": [
+        "abstraction",
+        "design-patterns"
+      ],
+      "description": "オブジェクトとクラスを中心に設計するプログラミング手法"
+    },
+    "functional-programming": {
+      "id": "functional-programming",
+      "label": "関数型プログラミング",
+      "level": "advanced",
+      "subConcepts": [
+        "pure-functions",
+        "higher-order-functions",
+        "immutability",
+        "recursion"
+      ],
+      "prerequisites": [
+        "functions",
+        "data-structures"
+      ],
+      "relatedConcepts": [
+        "lambda-expressions",
+        "map-filter-reduce",
+        "declarative-programming"
+      ],
+      "description": "副作用を避け、関数を中心に構築する宣言的なプログラミングパラダイム"
+    },
+    "asynchronous-programming": {
+      "id": "asynchronous-programming",
+      "label": "非同期プログラミング",
+      "level": "advanced",
+      "subConcepts": [
+        "promises",
+        "async-await",
+        "event-loop",
+        "callbacks"
+      ],
+      "prerequisites": [
+        "functions",
+        "control-flow"
+      ],
+      "relatedConcepts": [
+        "concurrency",
+        "multithreading",
+        "parallel-processing"
+      ],
+      "description": "時間のかかる処理を待たずに他の処理を同時に進めるプログラミング手法"
+    }
+  },
+  "relations": [
+    {
+      "from": "variables",
+      "to": "functions",
+      "type": "prerequisite",
+      "strength": 0.8,
+      "description": "変数の理解は関数を学ぶ前提条件"
+    },
+    {
+      "from": "functions",
+      "to": "recursion",
+      "type": "prerequisite",
+      "strength": 0.9,
+      "description": "関数の理解は再帰を学ぶ前提条件"
+    },
+    {
+      "from": "programming",
+      "to": "data-structures",
+      "type": "prerequisite",
+      "strength": 0.7,
+      "description": "プログラミング基礎の理解がデータ構造の前提"
+    },
+    {
+      "from": "data-structures",
+      "to": "algorithms",
+      "type": "prerequisite",
+      "strength": 0.8,
+      "description": "データ構造の理解はアルゴリズムの前提"
+    },
+    {
+      "from": "algorithms",
+      "to": "machine-learning",
+      "type": "prerequisite",
+      "strength": 0.6,
+      "description": "アルゴリズムの理解は機械学習の基礎"
+    },
+    {
+      "from": "machine-learning",
+      "to": "deep-learning",
+      "type": "prerequisite",
+      "strength": 0.9,
+      "description": "機械学習の理解は深層学習の前提"
+    },
+    {
+      "from": "variables",
+      "to": "data-types",
+      "type": "related",
+      "strength": 0.9,
+      "description": "変数とデータ型は密接に関連"
+    },
+    {
+      "from": "loops",
+      "to": "conditionals",
+      "type": "related",
+      "strength": 0.7,
+      "description": "ループと条件分岐は制御構造として関連"
+    },
+    {
+      "from": "object-oriented",
+      "to": "design-patterns",
+      "type": "related",
+      "strength": 0.85,
+      "description": "オブジェクト指向はデザインパターンの基礎概念を提供する"
+    },
+    {
+      "from": "functional-programming",
+      "to": "asynchronous-programming",
+      "type": "related",
+      "strength": 0.75,
+      "description": "関数型プログラミングの非同期処理はコールバックやPromiseで密接に関連する"
+    }
+  ]
+}

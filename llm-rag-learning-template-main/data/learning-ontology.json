@@ -1,0 +1,362 @@
+{
+  "concepts": {
+    "programming": {
+      "label": "プログラミング",
+      "level": "beginner",
+      "subConcepts": [
+        "variables",
+        "functions",
+        "loops",
+        "conditionals"
+      ],
+      "prerequisites": [],
+      "relatedConcepts": [
+        "computer-science",
+        "algorithms"
+      ],
+      "description": "コンピュータプログラムの作成技術"
+    },
+    "variables": {
+      "label": "変数",
+      "level": "beginner",
+      "subConcepts": [
+        "data-types",
+        "scope"
+      ],
+      "prerequisites": [],
+      "relatedConcepts": [
+        "memory",
+        "assignment"
+      ],
+      "description": "データを格納するための名前付きの場所"
+    },
+    "functions": {
+      "label": "関数",
+      "level": "intermediate",
+      "subConcepts": [
+        "parameters",
+        "return-values",
+        "recursion"
+      ],
+      "prerequisites": [
+        "variables"
+      ],
+      "relatedConcepts": [
+        "procedures",
+        "methods",
+        "abstraction"
+      ],
+      "description": "再利用可能なコードブロック"
+    },
+    "data-structures": {
+      "label": "データ構造",
+      "level": "intermediate",
+      "subConcepts": [
+        "arrays",
+        "linked-lists",
+        "trees",
+        "graphs"
+      ],
+      "prerequisites": [
+        "programming",
+        "variables"
+      ],
+      "relatedConcepts": [
+        "algorithms",
+        "complexity"
+      ],
+      "description": "データを効率的に格納・操作する方法"
+    },
+    "algorithms": {
+      "label": "アルゴリズム",
+      "level": "intermediate",
+      "subConcepts": [
+        "sorting",
+        "searching",
+        "recursion"
+      ],
+      "prerequisites": [
+        "programming",
+        "functions"
+      ],
+      "relatedConcepts": [
+        "data-structures",
+        "complexity"
+      ],
+      "description": "問題解決の手順"
+    },
+    "object-oriented": {
+      "id": "object-oriented",
+      "label": "オブジェクト指向",
+      "level": "intermediate",
+      "subConcepts": [
+        "classes",
+        "inheritance",
+        "polymorphism",
+        "encapsulation"
+      ],
+      "prerequisites": [
+        "functions",
+        "data-structures"
+      ],
+      "relatedConcepts": [
+        "abstraction",
+        "design-patterns"
+      ],
+      "description": "オブジェクトとクラスを中心に設計するプログラミング手法"
+    },
+    "functional-programming": {
+      "id": "functional-programming",
+      "label": "関数型プログラミング",
+      "level": "advanced",
+      "subConcepts": [
+        "pure-functions",
+        "higher-order-functions",
+        "immutability",
+        "recursion"
+      ],
+      "prerequisites": [
+        "functions",
+        "data-structures"
+      ],
+      "relatedConcepts": [
+        "lambda-expressions",
+        "map-filter-reduce",
+        "declarative-programming"
+      ],
+      "description": "副作用を避け、関数を中心に構築する宣言的なプログラミングパラダイム"
+    },
+    "asynchronous-programming": {
+      "id": "asynchronous-programming",
+      "label": "非同期プログラミング",
+      "level": "advanced",
+      "subConcepts": [
+        "promises",
+        "async-await",
+        "event-loop",
+        "callbacks"
+      ],
+      "prerequisites": [
+        "functions",
+        "control-flow"
+      ],
+      "relatedConcepts": [
+        "concurrency",
+        "multithreading",
+        "parallel-processing"
+      ],
+      "description": "時間のかかる処理を待たずに他の処理を同時に進めるプログラミング手法"
+    },
+    "cpu": {
+      "label": "CPU（中央処理装置）",
+      "level": "intermediate",
+      "subConcepts": [
+        "cores",
+        "clock-speed",
+        "cache"
+      ],
+      "prerequisites": [
+        "computer-architecture"
+      ],
+      "relatedConcepts": [
+        "gpu",
+        "memory",
+        "motherboard"
+      ],
+      "description": "コンピュータの演算や制御を行う中枢部品"
+    },
+    "gpu": {
+      "label": "GPU（グラフィックス処理装置）",
+      "level": "intermediate",
+      "subConcepts": [
+        "cuda-cores",
+        "ray-tracing",
+        "vram"
+      ],
+      "prerequisites": [
+        "cpu"
+      ],
+      "relatedConcepts": [
+        "computer-graphics",
+        "machine-learning"
+      ],
+      "description": "映像描画や並列処理を高速に行うための専用プロセッサ"
+    },
+    "memory": {
+      "label": "メモリ（RAM）",
+      "level": "beginner",
+      "subConcepts": [
+        "ddr-types",
+        "latency",
+        "capacity"
+      ],
+      "prerequisites": [
+        "computer-basics"
+      ],
+      "relatedConcepts": [
+        "cpu",
+        "storage"
+      ],
+      "description": "プログラムやデータを一時的に保持する揮発性の記憶装置"
+    },
+    "storage": {
+      "label": "ストレージ（SSD・HDD）",
+      "level": "beginner",
+      "subConcepts": [
+        "ssd",
+        "hdd",
+        "nvme"
+      ],
+      "prerequisites": [
+        "computer-basics"
+      ],
+      "relatedConcepts": [
+        "memory",
+        "motherboard"
+      ],
+      "description": "データやプログラムを長期間保存する記憶装置"
+    },
+    "motherboard": {
+      "label": "マザーボード",
+      "level": "intermediate",
+      "subConcepts": [
+        "chipset",
+        "bios",
+        "pci-slots"
+      ],
+      "prerequisites": [
+        "computer-architecture"
+      ],
+      "relatedConcepts": [
+        "cpu",
+        "memory",
+        "power-supply"
+      ],
+      "description": "すべての主要コンポーネントを接続する基盤となる回路基板"
+    },
+    "power-supply": {
+      "label": "電源ユニット（PSU）",
+      "level": "beginner",
+      "subConcepts": [
+        "wattage",
+        "efficiency",
+        "modular-cables"
+      ],
+      "prerequisites": [
+        "electrical-basics"
+      ],
+      "relatedConcepts": [
+        "motherboard",
+        "cooling-system"
+      ],
+      "description": "コンピュータ全体に電力を供給する装置"
+    },
+    "cooling-system": {
+      "label": "冷却システム",
+      "level": "intermediate",
+      "subConcepts": [
+        "air-cooling",
+        "liquid-cooling",
+        "thermal-paste"
+      ],
+      "prerequisites": [
+        "hardware-assembly"
+      ],
+      "relatedConcepts": [
+        "cpu",
+        "gpu",
+        "power-supply"
+      ],
+      "description": "部品の発熱を抑えて動作を安定させる仕組み"
+    },
+    "computer-case": {
+      "label": "PCケース",
+      "level": "beginner",
+      "subConcepts": [
+        "form-factor",
+        "airflow",
+        "mounting"
+      ],
+      "prerequisites": [
+        "hardware-basics"
+      ],
+      "relatedConcepts": [
+        "cooling-system",
+        "motherboard"
+      ],
+      "description": "内部部品を保護し、配置や冷却を支える外装"
+    },
+    "monitor": {
+      "label": "モニター（ディスプレイ）",
+      "level": "beginner",
+      "subConcepts": [
+        "resolution",
+        "refresh-rate",
+        "panel-type"
+      ],
+      "prerequisites": [
+        "graphics-basics"
+      ],
+      "relatedConcepts": [
+        "gpu",
+        "interface"
+      ],
+      "description": "コンピュータの映像を視覚的に表示する装置"
+    },
+    "peripherals": {
+      "label": "周辺機器",
+      "level": "beginner",
+      "subConcepts": [
+        "keyboard",
+        "mouse",
+        "printer"
+      ],
+      "prerequisites": [
+        "computer-basics"
+      ],
+      "relatedConcepts": [
+        "usb",
+        "bluetooth"
+      ],
+      "description": "コンピュータの入力や出力を拡張する外部デバイス"
+    }
+  },
+  "relations": [
+    {
+      "from": "variables",
+      "to": "functions",
+      "type": "prerequisite",
+      "strength": 0.8
+    },
+    {
+      "from": "functions",
+      "to": "recursion",
+      "type": "prerequisite",
+      "strength": 0.9
+    },
+    {
+      "from": "programming",
+      "to": "data-structures",
+      "type": "prerequisite",
+      "strength": 0.7
+    },
+    {
+      "from": "algorithms",
+      "to": "data-structures",
+      "type": "related",
+      "strength": 0.9
+    },
+    {
+      "from": "object-oriented",
+      "to": "design-patterns",
+      "type": "prerequisite",
+      "strength": 0.85
+    },
+    {
+      "from": "data-structures",
+      "to": "algorithms",
+      "type": "prerequisite",
+      "strength": 0.8
+    }
+  ]
+}
