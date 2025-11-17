@@ -98,11 +98,11 @@ class RAGSystem {
 
 
     buildPrompt(question, context) {
-        // document.getElementById('show1').textContent=`参考文書:`
-        // document.getElementById('show2').textContent=`${context}`
-        // document.getElementById('show3').textContent=`質問:`
-        // document.getElementById('show4').textContent=`${question}`
-        // document.getElementById('show5').textContent=`回答:`
+        document.getElementById('show1').textContent=`参考文書:`
+        document.getElementById('show2').textContent=`${context}`
+        document.getElementById('show3').textContent=`質問:`
+        document.getElementById('show4').textContent=`${question}`
+        document.getElementById('show5').textContent=`回答:`
         return `以下の文書を参考にして、質問に答えてください。​        
 参考文書:
 ${context}
@@ -111,7 +111,7 @@ ${context}
     }
 
     displayRAGResult(result){
-        // document.getElementById('show6').textContent=result.response;
+        document.getElementById('show6').textContent=result.response;
         console.log(result)
     }
 }

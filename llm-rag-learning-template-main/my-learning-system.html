@@ -162,6 +162,7 @@
         <button onclick="clearResponse()" style="background: #6c757d;">クリア</button>
         <button onclick="experimentPrompts()">test</button>
         <button onclick="experimentSearch()">test2</button>
+        <button onclick="experimentOntology()">test3</button>
 
 
         <div id="response-area"></div>
@@ -363,10 +364,42 @@ ${searchResult.sources.map(s => s.text).join('\n\n')}
       console.log('=== 比較 ===');
       console.log('ベクトル検索:', vectorResults.sources.length, '件');
       console.log('オントロジー検索:', semanticResults.sources.length, '件');
-      console.log('抽出された概念:', semanticResults.concepts);
+      console.log('抽出された概念:', semanticResults.conceptsUsed);
     }
 
     // ブラウザコンソールで実行してみよう
+    // 実験用の関数を作成
+    function experimentOntology() {
+      const targetConcept = 'recursion'; // 再帰'
+
+      // 前提知識チェーンを取得
+      const chain = semanticRAG.ontology.getPrerequisiteChain(targetConcept);
+      console.log('=== 前提知識チェーン ===');
+      console.log('再帰を学ぶために必要な概念:', chain);
+
+      // それぞれの概念の詳細を表示
+      chain.forEach(conceptId => {
+        if (semanticRAG.ontology.concepts.get(conceptId)) {
+          const concept = semanticRAG.ontology.concepts.get(conceptId);
+          console.log(concept)
+          console.log(`${concept.label} (${concept.level}):`);
+          console.log(`  説明: ${concept.description}`);
+          console.log(`  前提: ${concept.prerequisites}`);
+          console.log(`  関連: ${concept.relatedConcepts}`);
+        }
+      });
+
+      // 関連概念も調べてみる
+      const related = semanticRAG.ontology.findRelatedConcepts(targetConcept, 1);
+      console.log('=== 関連概念 ===');
+      console.log(related);
+    }
+
+    // ブラウザコンソールで実行してみよう
+    // experimentOntology();
+
+
+
   </script>
 </body>
 

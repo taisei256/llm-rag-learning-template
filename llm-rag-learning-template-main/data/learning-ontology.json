@@ -67,6 +67,29 @@
       ],
       "description": "データを効率的に格納・操作する方法"
     },
+    "recursion": {
+      "id": "recursion",
+      "label": "再帰",
+      "level": "intermediate",
+      "subConcepts": [
+        "base-case",
+        "recursive-case",
+        "tail-recursion",
+        "recurrence-relations"
+      ],
+      "prerequisites": [
+        "functions",
+        "control-flow",
+        "algorithms"
+      ],
+      "relatedConcepts": [
+        "iteration",
+        "divide-and-conquer",
+        "dynamic-programming",
+        "stack"
+      ],
+      "description": "関数が自分自身を呼び出すことで問題を解決する手法。再帰には必ず終了条件（ベースケース）が必要。"
+    },
     "algorithms": {
       "label": "アルゴリズム",
       "level": "intermediate",

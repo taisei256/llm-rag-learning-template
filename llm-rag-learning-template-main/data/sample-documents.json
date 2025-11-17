@@ -6,7 +6,11 @@
       "content": "プログラミングとは、コンピュータに指示を与えて特定のタスクを実行させることです。プログラミング言語を使用して、人間が理解できる形式で命令を書きます。主要なプログラミング言語には、Python、JavaScript、Java、C++などがあります。プログラミングを学ぶことで、問題解決能力や論理的思考力が向上します。",
       "subject": "programming",
       "level": "beginner",
-      "concepts": ["programming", "basics", "languages"],
+      "concepts": [
+        "programming",
+        "basics",
+        "languages"
+      ],
       "estimatedReadingTime": 2
     },
     {
@@ -15,7 +19,11 @@
       "content": "変数は、データを格納するための名前付きの場所です。変数を使用することで、プログラム内で値を保存し、後で参照または変更できます。JavaScriptでは、const、let、varを使用して変数を宣言します。constは定数を宣言し、値を変更できません。letは再代入可能な変数を宣言します。変数には、数値、文字列、ブール値、オブジェクトなど、様々な型のデータを格納できます。適切な変数名の選択は、コードの可読性を高める上で重要です。",
       "subject": "programming",
       "level": "beginner",
-      "concepts": ["variables", "data-types", "declaration"],
+      "concepts": [
+        "variables",
+        "data-types",
+        "declaration"
+      ],
       "estimatedReadingTime": 3
     },
     {
@@ -24,7 +32,12 @@
       "content": "関数は、特定のタスクを実行する再利用可能なコードブロックです。関数を使用することで、コードの重複を避け、プログラムをより整理された形で記述できます。関数は、入力（パラメータ）を受け取り、処理を実行し、結果（戻り値）を返すことができます。JavaScriptでは、function キーワードまたはアロー関数（=>）を使用して関数を定義します。関数を適切に設計することで、コードの保守性とテスト容易性が向上します。再帰的な関数も作成でき、複雑な問題を解決できます。",
       "subject": "programming",
       "level": "intermediate",
-      "concepts": ["functions", "abstraction", "parameters", "return-values"],
+      "concepts": [
+        "functions",
+        "abstraction",
+        "parameters",
+        "return-values"
+      ],
       "estimatedReadingTime": 4
     },
     {
@@ -33,7 +46,12 @@
       "content": "データ構造は、データを効率的に格納し操作するための方法です。適切なデータ構造を選択することで、プログラムの性能を大幅に向上させることができます。基本的なデータ構造には、配列、連結リスト、スタック、キューがあります。配列は、同じ型のデータを連続したメモリ領域に格納します。連結リストは、各要素が次の要素へのポインタを持つ構造です。スタックは後入れ先出し（LIFO）、キューは先入れ先出し（FIFO）の原則に従います。より高度なデータ構造には、木構造、グラフ、ハッシュテーブルなどがあります。それぞれのデータ構造には、特定の操作に対する時間計算量とメモリ使用量のトレードオフがあります。",
       "subject": "algorithms",
       "level": "intermediate",
-      "concepts": ["data-structures", "arrays", "lists", "efficiency"],
+      "concepts": [
+        "data-structures",
+        "arrays",
+        "lists",
+        "efficiency"
+      ],
       "estimatedReadingTime": 5
     },
     {
@@ -42,13 +60,32 @@
       "content": "機械学習は、明示的にプログラムすることなく、データからパターンを学習してタスクを実行するAI技術です。機械学習には主に3つのカテゴリがあります。教師あり学習では、ラベル付きデータを使用してモデルを訓練します。分類問題と回帰問題が含まれます。教師なし学習では、ラベルなしデータからパターンを発見します。クラスタリングや次元削減が典型的なタスクです。強化学習では、エージェントが環境と相互作用しながら、報酬を最大化する行動を学習します。ディープラーニングは、多層ニューラルネットワークを使用する機械学習の一分野で、画像認識、自然言語処理、音声認識などで優れた性能を発揮します。機械学習モデルの訓練には、適切な特徴量エンジニアリング、ハイパーパラメータの調整、過学習の防止が重要です。",
       "subject": "ai",
       "level": "advanced",
-      "concepts": ["machine-learning", "ai", "supervised-learning", "deep-learning"],
+      "concepts": [
+        "machine-learning",
+        "ai",
+        "supervised-learning",
+        "deep-learning"
+      ],
       "estimatedReadingTime": 6
     },
     {
       "id": "custom001",
       "title": "Minecraft",
       "content": "『Minecraft』（マインクラフト）は、Mojang Studiosが開発し2011年に発売されたサンドボックスゲーム。2009年5月17日のAlpha版公開を経て、2011年11月18日にPC向けに正式リリースされた。その後、モバイルデバイスや各種家庭用ゲーム機を含む多数のプラットフォームに移植されている。ブロック構成された手続き型生成の3次元の世界を舞台に、プレイヤーは原材料を発見・採取して道具やアイテムを作り、建物、土木構造物、機械を建設していく。選択したゲームモードによって、プレイヤーは敵対的なモブと戦ったり、他のプレイヤーとマルチプレイで協力・対戦したりすることができる。日本国内では「マイクラ」と略される。",
+      "subject": "your-subject",
+      "level": "beginner"
+    },
+    {
+      "id": "custom002",
+      "title": "Fortnite",
+      "content": "『Fortnite』（フォートナイト）は、Epic Gamesが開発・運営するオンラインバトルロイヤルゲーム。2017年にリリースされ、最大100人のプレイヤーが最後の1人（または1チーム）になるまで戦う。建築要素が特徴で、プレイヤーは素材を集めて壁・階段・床などを瞬時に組み立て、攻撃や防御を行うことができる。頻繁にシーズン更新が行われ、マップ・武器・イベントが追加され続けている。クロスプレイにも対応しており、様々なプラットフォームのプレイヤー同士で対戦可能である。",
+      "subject": "your-subject",
+      "level": "beginner"
+    },
+    {
+      "id": "custom003",
+      "title": "ゼルダの伝説 ブレス オブ ザ ワイルド",
+      "content": "『ゼルダの伝説 ブレス オブ ザ ワイルド』は、任天堂が開発・販売し、2017年にNintendo SwitchおよびWii U向けに発売されたオープンワールドアクションアドベンチャーゲーム。広大なハイラルの大地を自由に探索し、敵との戦闘、謎解き、料理や装備収集など幅広い要素が特徴。プレイヤーはリンクを操作し、災厄ガノンから王国を救うために冒険を進める。自由度の高さと革新的な物理エンジンが高く評価され、世界的な人気を誇る。",
       "subject": "your-subject",
       "level": "beginner"
     }
