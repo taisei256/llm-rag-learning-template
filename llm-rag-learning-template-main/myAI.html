@@ -1,210 +1,339 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>私の学習支援システム</title>
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Segoe UI', Arial, sans-serif; background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); min-height:100vh; padding:20px; }
-.container { max-width:1200px; margin:0 auto; }
-header { text-align:center; color:white; margin-bottom:30px; }
-header h1 { font-size:2.5em; margin-bottom:10px; text-shadow:2px 2px 4px rgba(0,0,0,0.3); }
-header p { font-size:1.2em; opacity:0.9; }
-.main-grid { display:grid; grid-template-columns:2fr 1fr; gap:20px; margin-bottom:20px; }
-.card { background:white; border-radius:15px; padding:25px; box-shadow:0 10px 30px rgba(0,0,0,0.2); }
-.card h2 { color:#667eea; margin-bottom:20px; padding-bottom:10px; border-bottom:3px solid #667eea; }
-.input-group { margin-bottom:15px; }
-.input-group input { width:100%; padding:12px; border:2px solid #ddd; border-radius:8px; font-size:1em; transition:border-color 0.3s; }
-.input-group input:focus { outline:none; border-color:#667eea; }
-button { background:#667eea; color:white; border:none; padding:12px 24px; border-radius:8px; font-size:1em; cursor:pointer; transition:all 0.3s; }
-button:hover { background:#5568d3; transform:translateY(-2px); box-shadow:0 5px 15px rgba(102,126,234,0.4); }
-#response-area { margin-top:20px; padding:15px; background:#f8f9fa; border-radius:8px; min-height:100px; display:none; }
-#response-area.show { display:block; animation:fadeIn 0.5s; }
-@keyframes fadeIn { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
-.sidebar-section { margin-bottom:20px; padding:15px; background:#f8f9fa; border-radius:8px; }
-.sidebar-section h3 { color:#667eea; margin-bottom:10px; }
-.concept-card { margin-top:10px; padding:10px; background:#eef; border-radius:8px; }
-.graph-bar { margin:5px 0; height:25px; border-radius:5px; color:white; text-align:right; padding-right:5px; line-height:25px; font-weight:bold; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私の学習支援システム</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        #response-area {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            min-height: 100px;
+            display: none;
+        }
+
+        #response-area.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sidebar-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .sidebar-section h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .concept-card {
+            margin-top: 10px;
+            padding: 10px;
+            background: #eef;
+            border-radius: 8px;
+        }
+
+        .graph-bar {
+            margin: 5px 0;
+            height: 25px;
+            border-radius: 5px;
+            color: white;
+            text-align: right;
+            padding-right: 5px;
+            line-height: 25px;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
-<div class="container">
-<header>
-<h1>🎓 私の学習支援システム</h1>
-<p>LLM × RAG × オントロジーで作る、自分専用の学習ツール</p>
-</header>
+    <div class="container">
+        <header>
+            <h1>🎓 私の学習支援システム</h1>
+            <p>LLM × RAG × オントロジーで作る、自分専用の学習ツール</p>
+        </header>
 
-<div class="main-grid">
-<div class="card">
-<h2>💬 質問・学習エリア</h2>
-<div class="input-group">
-<input type="text" id="question-input" placeholder="質問やプロンプトを入力してください..." onkeypress="if(event.key==='Enter') processQuestion()" />
-</div>
-<div class="input-group">
-<label for="understandingInput">理解度 (0-100)</label>
-<input type="number" id="understandingInput" min="0" max="100" value="80">
-</div>
-<button onclick="processQuestion()">質問する</button>
-<button onclick="clearResponse()" style="background:#6c757d;">クリア</button>
+        <div class="main-grid">
+            <div class="card">
+                <h2>💬 質問・学習エリア</h2>
+                <div class="input-group">
+                    <input type="text" id="question-input" placeholder="質問やプロンプトを入力してください..."
+                        onkeypress="if(event.key==='Enter') processQuestion()" />
+                </div>
+                <div class="input-group">
+                    <label for="understandingInput">理解度 (0-100)</label>
+                    <input type="number" id="understandingInput" min="0" max="100" value="80">
+                </div>
+                <button onclick="processQuestion()">質問する</button>
+                <button onclick="clearResponse()" style="background:#6c757d;">クリア</button>
 
-<div id="response-area"></div>
-<div id="graph-area"></div>
-</div>
+                <div id="response-area"></div>
+                <div id="graph-area"></div>
+            </div>
 
-<div>
-<div class="card">
-<h2>📊 情報パネル</h2>
-<div class="sidebar-section">
-<h3>システム状態</h3>
-<div id="system-status">初期化中...</div>
-</div>
-<div class="sidebar-section">
-<h3>統計情報</h3>
-<div id="statistics">データなし</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div>
+                <div class="card">
+                    <h2>📊 情報パネル</h2>
+                    <div class="sidebar-section">
+                        <h3>システム状態</h3>
+                        <div id="system-status">初期化中...</div>
+                    </div>
+                    <div class="sidebar-section">
+                        <h3>統計情報</h3>
+                        <div id="statistics">データなし</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<script src="js/config.js"></script>
-<script src="js/llm-client.js"></script>
-<script src="js/vector-search.js"></script>
-<script src="js/ontology.js"></script>
-<script src="js/concept-extractor.js"></script>
-<script src="js/semantic-rag.js"></script>
-<script src="js/rag-system.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/llm-client.js"></script>
+    <script src="js/vector-search.js"></script>
+    <script src="js/ontology.js"></script>
+    <script src="js/concept-extractor.js"></script>
+    <script src="js/semantic-rag.js"></script>
+    <script src="js/rag-system.js"></script>
 
-<script>
-// --- 簡易オントロジー ---
-const ontology=new Map();
-function addConcept(id,props){ontology.set(id,{id,...props});}
-addConcept('variables',{label:'変数',level:'beginner',description:'データを格納する名前付き場所',prerequisites:[],relatedConcepts:['memory','assignment']});
-addConcept('functions',{label:'関数',level:'intermediate',description:'再利用可能なコードブロック',prerequisites:['variables'],relatedConcepts:['procedures','methods']});
-addConcept('recursion',{label:'再帰',level:'intermediate',description:'関数が自分自身を呼び出す手法',prerequisites:['functions'],relatedConcepts:['iteration','divide-and-conquer']});
+    <script>
+        // --- 簡易オントロジー ---
+        const ontology = new Map();
+        function addConcept(id, props) { ontology.set(id, { id, ...props }); }
+        addConcept('variables', { label: '変数', level: 'beginner', description: 'データを格納する名前付き場所', prerequisites: [], relatedConcepts: ['memory', 'assignment'] });
+        addConcept('functions', { label: '関数', level: 'intermediate', description: '再利用可能なコードブロック', prerequisites: ['variables'], relatedConcepts: ['procedures', 'methods'] });
+        addConcept('recursion', { label: '再帰', level: 'intermediate', description: '関数が自分自身を呼び出す手法', prerequisites: ['functions'], relatedConcepts: ['iteration', 'divide-and-conquer'] });
 
-function getPrerequisiteChain(conceptId){
-  const chain=[]; const concept=ontology.get(conceptId);
-  if(!concept) return chain;
-  if(concept.prerequisites){
-    for(const p of concept.prerequisites){
-      chain.push(p);
-      chain.push(...getPrerequisiteChain(p));
-    }
-  }
-  return [...new Set(chain)];
-}
+        function getPrerequisiteChain(conceptId) {
+            const chain = []; const concept = ontology.get(conceptId);
+            if (!concept) return chain;
+            if (concept.prerequisites) {
+                for (const p of concept.prerequisites) {
+                    chain.push(p);
+                    chain.push(...getPrerequisiteChain(p));
+                }
+            }
+            return [...new Set(chain)];
+        }
 
-// --- 学習履歴トラッカー ---
-class LearningTracker{
-  constructor(){this.history=JSON.parse(localStorage.getItem('history')||'[]');}
-  addRecord(question,answer,understanding){this.history.push({timestamp:new Date(),question,answer,understanding});localStorage.setItem('history',JSON.stringify(this.history));}
-  getStats(){if(this.history.length===0)return{total:0,avgUnderstanding:0}; return{total:this.history.length,avgUnderstanding:Math.round(this.history.reduce((sum,r)=>sum+r.understanding,0)/this.history.length)};}
-}
-const tracker=new LearningTracker();
+        // --- 学習履歴トラッカー ---
+        class LearningTracker {
+            constructor() { this.history = JSON.parse(localStorage.getItem('history') || '[]'); }
+            addRecord(question, answer, understanding) { this.history.push({ timestamp: new Date(), question, answer, understanding }); localStorage.setItem('history', JSON.stringify(this.history)); }
+            getStats() { if (this.history.length === 0) return { total: 0, avgUnderstanding: 0 }; return { total: this.history.length, avgUnderstanding: Math.round(this.history.reduce((sum, r) => sum + r.understanding, 0) / this.history.length) }; }
+        }
+        const tracker = new LearningTracker();
 
-// --- 概念ごとの理解度 ---
-const conceptScores=new Map();
+        // --- 概念ごとの理解度 ---
+        const conceptScores = new Map();
 
-// --- グローバル ---
-let semanticRAG, normalRAG, questionCount=0;
+        // --- グローバル ---
+        let semanticRAG, normalRAG, questionCount = 0;
 
-// --- 初期化 ---
-async function initialize2(){
-  updateStatus('🚀 初期化中...');
-  try{
-    const [documentsRes, ontologyRes]=await Promise.all([
-      fetch("data/sample-documents.json"),
-      fetch("data/learning-ontology.json")
-    ]);
-    const documentsData=await documentsRes.json();
-    const ontologyData=await ontologyRes.json();
-    semanticRAG=new SemanticRAGSystem();
-    await semanticRAG.initialize(documentsData.documents, ontologyData);
-    normalRAG=new RAGSystem();
-    await normalRAG.initialize(documentsData.documents);
-    updateStatus('✅ 準備完了');
-    updateStatistics();
-    updateGraph();
-  }catch(err){console.error(err);updateStatus('❌ 初期化失敗');}
-}
+        // --- 初期化 ---
+        async function initialize2() {
+            updateStatus('🚀 初期化中...');
+            try {
+                const [documentsRes, ontologyRes] = await Promise.all([
+                    fetch("data/sample-documents.json"),
+                    fetch("data/learning-ontology.json")
+                ]);
+                const documentsData = await documentsRes.json();
+                const ontologyData = await ontologyRes.json();
+                semanticRAG = new SemanticRAGSystem();
+                await semanticRAG.initialize(documentsData.documents, ontologyData);
+                normalRAG = new RAGSystem();
+                await normalRAG.initialize(documentsData.documents);
+                updateStatus('✅ 準備完了');
+                updateStatistics();
+                updateGraph();
+            } catch (err) { console.error(err); updateStatus('❌ 初期化失敗'); }
+        }
 
-// --- 質問処理 ---
-async function processQuestion(){
-  const question=document.getElementById('question-input').value.trim();
-  const understanding=document.getElementById('understandingInput').valueAsNumber||0;
-  const resultArea=document.getElementById('response-area');
-  resultArea.className='show';
-  resultArea.innerHTML='<p>🤔 考え中...</p>';
-  if(!question){alert('質問を入力してください'); return;}
-  try{
-    const result=await semanticRAG.semanticQuery(question);
+        // --- 質問処理 ---
+        async function processQuestion() {
+            const question = document.getElementById('question-input').value.trim();
+            const understanding = document.getElementById('understandingInput').valueAsNumber || 0;
+            const resultArea = document.getElementById('response-area');
+            resultArea.className = 'show';
+            resultArea.innerHTML = '<p>🤔 考え中...</p>';
+            if (!question) { alert('質問を入力してください'); return; }
+            try {
+                const result = await semanticRAG.semanticQuery(question);
 
-    resultArea.innerHTML='';
-    const div=document.createElement('div');
-    div.className='concept-card';
-    div.innerHTML=`<h3>💡 回答</h3><p>${result.answer}</p><h4>🔗 関連概念</h4><p>${result.conceptsUsed.join(', ')||'なし'}</p><h4>📚 参照文書</h4><p>${result.sources.length}件</p>`;
-    resultArea.appendChild(div);
+                resultArea.innerHTML = '';
+                const div = document.createElement('div');
+                div.className = 'concept-card';
+                div.innerHTML = `<h3>💡 回答</h3><p>${result.answer}</p><h4>🔗 関連概念</h4><p>${result.conceptsUsed.join(', ') || 'なし'}</p><h4>📚 参照文書</h4><p>${result.sources.length}件</p>`;
+                resultArea.appendChild(div);
 
-    // 概念ごとの理解度計算
-    const mainConcepts=result.conceptsUsed;
-    const chainConcepts=[];
-    mainConcepts.forEach(c=>{
-      chainConcepts.push(...getPrerequisiteChain(c));
-      const concept=semanticRAG.ontology.concepts.get(c);
-      if(concept && concept.relatedConcepts) chainConcepts.push(...concept.relatedConcepts);
-    });
-    const allConcepts=[...new Set([...mainConcepts,...chainConcepts])];
-    allConcepts.forEach(c=>{
-      let weight=0.3; 
-      if(mainConcepts.includes(c)) weight=1.0;
-      else if(chainConcepts.includes(c)) weight=0.7;
-      const score=understanding*weight;
-      if(!conceptScores.has(c)) conceptScores.set(c,{totalScore:0,count:0});
-      const obj=conceptScores.get(c);
-      obj.totalScore+=score;
-      obj.count+=1;
-    });
+                // 概念ごとの理解度計算
+                const mainConcepts = result.conceptsUsed;
+                const chainConcepts = [];
+                mainConcepts.forEach(c => {
+                    chainConcepts.push(...getPrerequisiteChain(c));
+                    const concept = semanticRAG.ontology.concepts.get(c);
+                    if (concept && concept.relatedConcepts) chainConcepts.push(...concept.relatedConcepts);
+                });
+                const allConcepts = [...new Set([...mainConcepts, ...chainConcepts])];
+                allConcepts.forEach(c => {
+                    let weight = 0.3;
+                    if (mainConcepts.includes(c)) weight = 1.0;
+                    else if (chainConcepts.includes(c)) weight = 0.7;
+                    const score = understanding * weight;
+                    if (!conceptScores.has(c)) conceptScores.set(c, { totalScore: 0, count: 0 });
+                    const obj = conceptScores.get(c);
+                    obj.totalScore += score;
+                    obj.count += 1;
+                });
 
-    tracker.addRecord(question,result.answer,understanding);
-    updateStatistics();
-    updateGraph();
-  }catch(err){resultArea.innerHTML=`<p style="color:red;">❌ エラー: ${err.message}</p>`;}
-}
+                tracker.addRecord(question, result.answer, understanding);
+                updateStatistics();
+                updateGraph();
+            } catch (err) { resultArea.innerHTML = `<p style="color:red;">❌ エラー: ${err.message}</p>`; }
+        }
 
-function clearResponse(){
-  document.getElementById('response-area').innerHTML='';
-  document.getElementById('question-input').value='';
-  document.getElementById('understandingInput').value='80';
-}
+        function clearResponse() {
+            document.getElementById('response-area').innerHTML = '';
+            document.getElementById('question-input').value = '';
+            document.getElementById('understandingInput').value = '80';
+        }
 
-function updateStatus(msg){ document.getElementById('system-status').innerHTML=`<p style="padding:10px; background:white; border-radius:5px;">${msg}</p>`; }
+        function updateStatus(msg) { document.getElementById('system-status').innerHTML = `<p style="padding:10px; background:white; border-radius:5px;">${msg}</p>`; }
 
-function updateStatistics(){
-  const stats=tracker.getStats();
-  document.getElementById('statistics').innerHTML=`<p style="padding:10px; background:white; border-radius:5px;">質問数: ${stats.total}<br>平均理解度: ${stats.avgUnderstanding}%</p>`;
-}
+        function updateStatistics() {
+            const stats = tracker.getStats();
+            document.getElementById('statistics').innerHTML = `<p style="padding:10px; background:white; border-radius:5px;">質問数: ${stats.total}<br>平均理解度: ${stats.avgUnderstanding}%</p>`;
+        }
 
-function updateGraph(){
-  const graphArea=document.getElementById('graph-area');
-  graphArea.innerHTML='';
-  conceptScores.forEach((v,k)=>{
-    const avg=Math.round(v.totalScore/v.count);
-    let color='red';
-    if(avg>=80) color='green';
-    else if(avg>=50) color='orange';
-    else color='red';
-    const bar=document.createElement('div');
-    bar.className='graph-bar';
-    bar.style.width=avg+'%';
-    bar.style.backgroundColor=color;
-    bar.textContent=`${semanticRAG.ontology.concepts.get(k)?.label||k}: ${avg}%`;
-    graphArea.appendChild(bar);
-  });
-}
+        function updateGraph() {
+            const graphArea = document.getElementById('graph-area');
+            graphArea.innerHTML = '';
+            conceptScores.forEach((v, k) => {
+                const avg = Math.round(v.totalScore / v.count);
+                let color = 'red';
+                if (avg >= 80) color = 'green';
+                else if (avg >= 50) color = 'orange';
+                else color = 'red';
+                const bar = document.createElement('div');
+                bar.className = 'graph-bar';
+                bar.style.width = avg + '%';
+                bar.style.backgroundColor = color;
+                bar.textContent = `${semanticRAG.ontology.concepts.get(k)?.label || k}: ${avg}%`;
+                graphArea.appendChild(bar);
+            });
+        }
 
-window.onload=initialize2;
-</script>
+        window.onload = initialize2;
+    </script>
 </body>
+
 </html>
